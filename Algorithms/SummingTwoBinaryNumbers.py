@@ -1,5 +1,5 @@
 '''
-Chapter2 ex 4. Add 2 binarty numbers (number is represented as an array)
+Chapter 2 ex 4. Add 2 binarty numbers (number is represented as an array)
 '''
 
 def add_binnary_numbers(x, y):
