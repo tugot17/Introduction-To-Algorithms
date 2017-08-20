@@ -32,3 +32,14 @@ class TestStack(TestCase):
 
         self.assertEqual(60, stack.pop())
         self.assertEqual(32, stack.pop())
+
+    def test_does_not_raise_on_valid_input(self):
+        stack = Stack()
+
+        raised = False
+        try:
+            stack.pop()
+        except:
+            raised = True
+
+        self.assertTrue(raised)
