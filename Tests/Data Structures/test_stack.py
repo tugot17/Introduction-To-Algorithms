@@ -10,7 +10,7 @@ class TestStack(TestCase):
 
         stack.push(22)
 
-        self.assertFalse(stack.isEmpty())
+        self.assertFalse(stack.is_empty())
 
 
     def test_peek(self):

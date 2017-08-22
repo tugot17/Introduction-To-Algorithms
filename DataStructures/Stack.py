@@ -6,28 +6,26 @@ class Element:
 class EmptyStackException(Exception):
     pass
 
-
 class Stack(object):
-    head = None
+    top = None
 
-
-    def isEmpty(self):
-        return self.head == None
+    def is_empty(self):
+        return self.top == None
 
     def push(self, value):
-        self.head = Element(value, self.head)
+        self.top = Element(value, self.top)
 
     def peek(self):
-        if(self.isEmpty()):
+        if(self.is_empty()):
             raise EmptyStackException
-        return self.head.value
+        return self.top.value
 
     def pop(self):
-        if(self.isEmpty()):
+        if(self.is_empty()):
             raise EmptyStackException
 
-        returned_element = self.head.value
-        self.head = self.head.previous
+        returned_element = self.top.value
+        self.top = self.top.previous
 
         return returned_element
 

@@ -4,8 +4,6 @@ Chapter 4 find the biggest profit using Divide & Conquer
 def find_max_profit(array):
     return find_max_profit_using_divide_and_conquer(array, 0, len(array)-1)
 
-
-
 def find_max_profit_using_divide_and_conquer(array, start, end):
     if end-start == 0:
         return 0, start, start
@@ -13,12 +11,10 @@ def find_max_profit_using_divide_and_conquer(array, start, end):
     if end - start == 1:
         return array[end] - array[start], start, end
 
-
     mid = start + (end-start)//2
 
     max_profit1, buy_day_1, sell_day_1 = find_max_profit_using_divide_and_conquer(array, start, mid)
     max_profit2, buy_day_2, sell_day_2 = find_max_profit_using_divide_and_conquer(array, mid+1, end)
-
 
     min_val_in_subarray_1 = array[start]
     min_val_in_subarray_1_id = start
@@ -38,7 +34,6 @@ def find_max_profit_using_divide_and_conquer(array, start, end):
 
     max_profit3 = max_val_in_subarray_2 - min_val_in_subarray_1
 
-
     max_profit = find_max(max_profit1, max_profit2, max_profit3)
 
     if max_profit == max_profit1:
@@ -49,8 +44,6 @@ def find_max_profit_using_divide_and_conquer(array, start, end):
 
     if max_profit == max_profit3:
         return max_profit3, min_val_in_subarray_1_id, max_val_in_subarray_2_id
-
-
 
 def find_max(one, two, three):
     a = []
